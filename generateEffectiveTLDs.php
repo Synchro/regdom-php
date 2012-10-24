@@ -62,7 +62,7 @@ function buildSubdomain(&$node, $tldParts) {
 	}
 }
 
-function printNode($key, $valueTree, $isAssignment = false) {
+function printNode($key, $valueTree, $isAssignment = false, $depth = 0) {
 
 	global $format;
 
@@ -84,7 +84,7 @@ function printNode($key, $valueTree, $isAssignment = false) {
 			if ($format == "perl") {
 				echo "'$key' => {";
 			} else {
-				echo "'$key' => array(";
+				echo str_repeat('  ', $depth)."'$key' => array(";
 			}
 		}
 	}
@@ -94,13 +94,13 @@ function printNode($key, $valueTree, $isAssignment = false) {
 	for ($i=0; $i<count($keys); $i++) {
 
 		$key = $keys[$i];
-
-		printNode($key, $valueTree[$key]);
+		echo "\n";
+		printNode($key, $valueTree[$key], false, $depth + 1);
 
 		if ($i+1 != count($valueTree)) {
-			echo ",\n";
+			echo ",";
 		} else {
-			echo "\n";
+			echo "";
 		}
 	}
 
