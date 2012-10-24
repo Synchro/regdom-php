@@ -154,21 +154,21 @@ $list = file_get_contents(URL);
 // $list = "bg\na.bg\n0.bg\n!c.bg\n";
 $lines = explode("\n", $list);
 $licence = TRUE;
-
+$commentsection = '';
 
 foreach ($lines as $line) {
 
 	if ($licence && startsWith($line, "//")) {
 
 		if ($format == "perl") {
-			echo "# ".substr($line, 2)."\n";
+			$commentsection .= "# ".substr($line, 2)."\n";
 		} else {
-			echo $line."\n";
+			$commentsection .= $line."\n";
 		}
 
 		if (startsWith($line, "// ***** END LICENSE BLOCK")) {
 			$licence = FALSE;
-			echo "\n";
+			$commentsection .= "\n";
 		}
 		continue;
 	}
@@ -198,11 +198,13 @@ $tldTree = array(
 
 switch($format) {
 	case 'c':
+		echo $commentsection."\n";
 		echo "char* tldString = \"";
 		printNode_C("root", $tldTree);
 		echo "\";\n";
 		break;
 	case 'perl':
+		echo $commentsection."\n";
 		print "package effectiveTLDs;\n\n";
 		printNode("\$tldTree", $tldTree, TRUE);
 		echo ";\n";
@@ -210,6 +212,7 @@ switch($format) {
 	case 'php':
 	default:
 		echo "<?php\n";
+		echo $commentsection."\n";
 		printNode("\$tldTree", $tldTree, TRUE);
 		echo ";\n";
 		echo "return \$tldTree;\n";

@@ -1,3 +1,4 @@
+<?php
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -410,6 +411,7 @@
 // Private registries in .ua
 // ug : https://www.registry.co.ug/
 // uk : http://en.wikipedia.org/wiki/.uk
+// Submitted by registry <noc@nominet.org.uk> 2012-10-02
 // us : http://en.wikipedia.org/wiki/.us
 // us geographic names
 // The registrar notes several more specific domains available in each state,
@@ -428,7 +430,8 @@
 // va : http://en.wikipedia.org/wiki/.va
 // vc : http://en.wikipedia.org/wiki/.vc
 // Submitted by registry <kshah@ca.afilias.info> 2008-06-13
-// ve : http://registro.nic.ve/nicve/registro/index.html
+// ve : https://registro.nic.ve/
+// Confirmed by registry 2012-10-04
 // vg : http://en.wikipedia.org/wiki/.vg
 // vi : http://www.nic.vi/newdomainform.htm
 // http://www.nic.vi/Domain_Rules/body_domain_rules.html indicates some other
@@ -528,11 +531,13 @@
 // Submitted by registry <lendl@nic.at> 2008-06-09
 // co.ca : http://registry.co.ca
 // CentralNic : http://www.centralnic.com/names/domains
-// Confirmed by registry <gavin.brown@centralnic.com> 2008-06-09
+// Confirmed by registry <gavin.brown@centralnic.com> 2012-09-27
 // Opera Software, A.S.A.
 // Requested by Yngve Pettersen <yngve@opera.com> 2009-11-26
 // Google, Inc.
 // Requested by Eduardo Vela <evn@google.com> 2010-09-06
+// DreamHost : http://www.dreamhost.com/
+// Requested by Andrew Farmer <andrew.farmer@dreamhost.com> 2012-10-02
 // iki.fi : Submitted by Hannu Aronsson <haa@iki.fi> 2009-11-05
 // c.la : http://www.c.la/
 // ZaNiC : http://www.za.net/
@@ -542,7 +547,7 @@
 // Mainseek Sp. z o.o. : http://www.co.pl/
 // DynDNS.com : http://www.dyndns.com/services/dns/dyndns/
 // ===END PRIVATE DOMAINS===
-<?php
+
 $tldTree = array('ac' => array('com' => array(),
 'edu' => array(),
 'gov' => array(),
@@ -1113,6 +1118,7 @@ $tldTree = array('ac' => array('com' => array(),
 'za' => array(),
 'operaunite' => array(),
 'appspot' => array(),
+'dreamhosters' => array(),
 'dyndns-at-home' => array(),
 'dyndns-at-work' => array(),
 'dyndns-blog' => array(),
@@ -4546,6 +4552,7 @@ $tldTree = array('ac' => array('com' => array(),
 ),
 'ne' => array(),
 'net' => array('gb' => array(),
+'hu' => array(),
 'jp' => array(),
 'se' => array(),
 'uk' => array(),
@@ -6276,31 +6283,29 @@ $tldTree = array('ac' => array('com' => array(),
 'org' => array()
 ),
 'uk' => array('*' => array(),
+'nhs' => array('*' => array()
+),
+'police' => array('*' => array()
+),
 'sch' => array('*' => array()
 ),
 'bl' => array('!' => ''
 ),
 'british-library' => array('!' => ''
 ),
-'icnet' => array('!' => ''
-),
 'jet' => array('!' => ''
 ),
 'mod' => array('!' => ''
 ),
-'nel' => array('!' => ''
+'national-library-scotland' => array('!' => ''
 ),
-'nhs' => array('!' => ''
+'nel' => array('!' => ''
 ),
 'nic' => array('!' => ''
 ),
 'nls' => array('!' => ''
 ),
-'national-library-scotland' => array('!' => ''
-),
 'parliament' => array('!' => ''
-),
-'police' => array('!' => ''
 )
 ),
 'us' => array('dni' => array(),
@@ -6554,7 +6559,16 @@ $tldTree = array('ac' => array('com' => array(),
 'mil' => array(),
 'edu' => array()
 ),
-'ve' => array('*' => array()
+'ve' => array('co' => array(),
+'com' => array(),
+'e12' => array(),
+'edu' => array(),
+'gov' => array(),
+'info' => array(),
+'mil' => array(),
+'net' => array(),
+'org' => array(),
+'web' => array()
 ),
 'vg' => array(),
 'vi' => array('co' => array(),
